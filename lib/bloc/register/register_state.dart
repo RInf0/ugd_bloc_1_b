@@ -1,6 +1,6 @@
 import 'package:ugd_bloc_1_b/bloc/form_submission_state.dart';
 
-class RegisterState{
+class RegisterState {
   final bool isPasswordVisible;
   final FormSubmissionState formSubmissionState;
 

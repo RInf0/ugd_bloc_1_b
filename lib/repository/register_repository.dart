@@ -1,26 +1,34 @@
 import '../model/user.dart';
 
-class FailedLogin implements Exception{
-  String errorMessage(){
-    return "Login Failed";
+class FailedLogin implements Exception {
+  String errorMessage() {
+    return "Register Failed";
   }
 }
 
-class RegisterRepository{
-  Future<User> register(String username, String password, String email, String no) async{
-    print("Logining...");
+class GlobalVariable {
+  static List<User> listUsers = [];
+}
+
+class RegisterRepository {
+  Future<User> register(
+      String username, String password, String email, String no) async {
+    print("Register...");
     User userData = User();
     await Future.delayed(const Duration(seconds: 3), () {
-      /*if(this.username == username && this.password == password){
-        userData = User(
-          name: username,
-          password: password,
-          token: "12345"); //Sebuah process permintaan ke server
-      }else if(username == '' || password == ''){
-        throw 'Username or password cannot be empty';
-      }else{
+      if (username == '' || password == '' || email == '' || no == '') {
+        throw 'Harap Isi Semua Field';
+      } else if (username.isNotEmpty &&
+          password.isNotEmpty &&
+          email.isNotEmpty &&
+          no.isNotEmpty) {
+        userData =
+            User(name: username, password: password, email: email, no: no);
+        print("Kesimpen");
+        GlobalVariable.listUsers.add(userData);
+      } else {
         throw FailedLogin();
-      }*/
+      }
     }); //Process request dan response
     return userData;
   }
