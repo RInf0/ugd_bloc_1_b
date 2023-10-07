@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ugd_bloc_1_b/bloc/form_submission_state.dart';
-import 'package:ugd_bloc_1_b/bloc/login_event.dart';
-import 'package:ugd_bloc_1_b/bloc/login_state.dart';
+import 'package:ugd_bloc_1_b/bloc/login/login_event.dart';
+import 'package:ugd_bloc_1_b/bloc/login/login_state.dart';
 import 'package:ugd_bloc_1_b/repository/login_repository.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
