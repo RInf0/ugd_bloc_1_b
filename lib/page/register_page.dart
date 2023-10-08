@@ -189,7 +189,8 @@ class _RegisterViewState extends State<RegisterView> {
                                         username: usernameController.text,
                                         password: passwordController.text,
                                         email: emailController.text,
-                                        no: phoneNumberController.text),
+                                        no: phoneNumberController.text,
+                                        tglLahir: bornDateController.text),
                                   );
                               // Map<String, dynamic> formData = {};
                               // formData['username'] = usernameController.text;

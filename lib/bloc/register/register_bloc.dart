@@ -21,7 +21,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   void _onFormSubmitted(FormSumitted event, Emitter<RegisterState> emit) async {
     emit(state.copyWith(formSubmissionState:  FormSubmitting()));
     try{
-      await registerRepository.register(event.username, event.password, event.email, event.no);
+      await registerRepository.register(event.username, event.password, event.email, event.no, event.tglLahir);
       emit(state.copyWith(formSubmissionState: SubmissionSuccess()));
     } on FailedLogin catch (e){
       emit(state.copyWith(formSubmissionState: SubmissionFailed(e.errorMessage())));

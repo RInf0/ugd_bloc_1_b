@@ -12,7 +12,7 @@ class GlobalVariable {
 
 class RegisterRepository {
   Future<User> register(
-      String username, String password, String email, String no) async {
+      String username, String password, String email, String no, String tglLahir) async {
     print("Register...");
     User userData = User();
     await Future.delayed(const Duration(seconds: 3), () {
@@ -23,7 +23,7 @@ class RegisterRepository {
           email.isNotEmpty &&
           no.isNotEmpty) {
         userData =
-            User(name: username, password: password, email: email, no: no);
+            User(name: username, password: password, email: email, no: no, tglLahir: tglLahir);
         print("Kesimpen");
         GlobalVariable.listUsers.add(userData);
       } else {

@@ -7,6 +7,7 @@ class FormSumitted extends RegisterEvent {
   String password;
   String email;
   String no;
+  String tglLahir;
 
-  FormSumitted({required this.username, required this.password, required this.email,required this.no});
+  FormSumitted({required this.username, required this.password, required this.email,required this.no, required this.tglLahir});
 }
