@@ -9,19 +9,17 @@ class FailedLogin implements Exception {
 }
 
 class LoginRepository {
-  //Data akun dummy
-
   Future<User> login(String username, String password) async {
-    print("Logining...");
+    // print("Logining...");
     User userData = User();
     await Future.delayed(const Duration(seconds: 3), () {
+      if (username == '' || password == '') {
+        throw 'Username or password cannot be empty';
+      }
       for (User user in GlobalVariable.listUsers) {
-        print(user.name);
         if (user.name == username && user.password == password) {
           userData = User(name: username, password: password, token: "12345");
           return userData; //Sebuah process permintaan ke server
-        } else if (username == '' || password == '') {
-          throw 'Username or password cannot be empty';
         }
       }
       throw FailedLogin();

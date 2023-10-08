@@ -110,11 +110,13 @@ class _LoginViewState extends State<LoginView> {
                                 vertical: 16.0, horizontal: 16.0),
                             child: state.formSubmissionState is FormSubmitting
                                 ? const CircularProgressIndicator(
-                                    color: Colors.white)
+                                    color: Colors.blue)
                                 : const Text("Login"),
                           ),
                         ),
                       ),
+
+                      const SizedBox(height: 15),
 
                       // button ke halaman register
                       Row(

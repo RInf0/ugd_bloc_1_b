@@ -5,7 +5,8 @@ class RegisterState {
   final FormSubmissionState formSubmissionState;
 
   RegisterState({
-    this.isPasswordVisible = false,
+    // true => invisible at first
+    this.isPasswordVisible = true,
     this.formSubmissionState = const InitialFormState(),
   });
 
